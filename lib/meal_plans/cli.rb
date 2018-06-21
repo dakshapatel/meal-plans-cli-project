@@ -1,4 +1,5 @@
 
+class MealPlans::CLI
 
   def call
     list_diet_plan
@@ -19,3 +20,5 @@
     DOC
 
   end
+
+end 

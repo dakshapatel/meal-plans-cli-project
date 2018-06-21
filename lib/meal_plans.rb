@@ -1,5 +1,6 @@
-relative_require "./meal_plans/version"
-
-module MealPlans
-  # Your code goes here...
-end
+require_relative "./meal_plans/version"
+require "pry"
+# require "capybara/poltergeist"
+# require "capybara"
+require "nokogiri"
+require "open-uri"

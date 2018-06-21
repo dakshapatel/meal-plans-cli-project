@@ -1,3 +1,7 @@
 #!/usr/bin/env ruby
+require_relative "../lib/meal_plans"
+require_relative "../lib/version"
+require_relative "../lib/cli"
 
-puts "hello world"
+
+MealPlans::CLI.new.call
