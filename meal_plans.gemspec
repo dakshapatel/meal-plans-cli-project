@@ -6,10 +6,10 @@ require "meal_plans/version"
 Gem::Specification.new do |spec|
   spec.name          = "meal_plans"
   spec.version       = MealPlans::VERSION
-  spec.authors       = ["'Daksha Patel'"]
-  spec.email         = ["'dakshapatel100@gmail.com'"]
+  spec.authors       = ["Daksha Patel"]
+  spec.email         = ["dakshapatel100@gmail.com"]
 
-  spec.summary       = %q{CLI will display meal plans of a meal delivery service based on diet options.}
+  spec.summary       = %q{CLI will display meal plans of Green Chef based on users diet options.}
   spec.description   = %q{Scrapes data from the Green Chef website: https://greenchef.com/home to provide a CLI for viewing details for meals options of the week based on the users diet. Additional information such as cook time, allergens, and calories will be displayed.}
   spec.homepage      = "https://github.com/dakshapatel/meal-plans-cli-project."
   spec.license       = "MIT"
