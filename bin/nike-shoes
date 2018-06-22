@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
 require_relative "../lib/nike_shoes"
-require_relative "../lib/version"
-require_relative "../lib/cli"
-
 
 NikeShoes::CLI.new.call
