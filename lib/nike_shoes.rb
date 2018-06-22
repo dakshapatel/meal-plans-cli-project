@@ -1,4 +1,4 @@
-require_relative "./meal_plans/version"
+require_relative "./nike_shoes/version"
 require "pry"
 # require "capybara/poltergeist"
 # require "capybara"

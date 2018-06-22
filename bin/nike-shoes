@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
-require_relative "../lib/meal_plans"
+require_relative "../lib/nike_shoes"
 require_relative "../lib/version"
 require_relative "../lib/cli"
 
 
-MealPlans::CLI.new.call
+NikeShoes::CLI.new.call

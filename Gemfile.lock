@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meal_plans (0.1.0)
+    nike_shoes (0.1.0)
       nokogiri
 
 GEM
@@ -24,7 +24,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   gem-release
-  meal_plans!
+  nike_shoes!
   pry
   rake (~> 10.0)
 

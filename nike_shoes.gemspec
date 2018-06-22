@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "meal_plans/version"
+require "nike_shoes/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "meal_plans"
-  spec.version       = MealPlans::VERSION
+  spec.name          = "nike_shoes"
+  spec.version       = NikeShoes::VERSION
   spec.authors       = ["Daksha Patel"]
   spec.email         = ["dakshapatel100@gmail.com"]
 
@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = "bin"
-  spec.executables   = ["meal-plans"]
+  spec.executables   = ["nike-shoes"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   #spec.add_dependency "capybara/poltergeist"
   #spec.add_dependency "capybara"
   spec.add_dependency "nokogiri"
-  
+
 
 
 end
