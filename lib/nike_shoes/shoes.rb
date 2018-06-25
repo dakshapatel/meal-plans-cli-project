@@ -12,11 +12,11 @@ class NikeShoes::Shoes
 
 
 
-    doc.css('.number-of-colors').text.split("\n").map(&:strip).select do |number_of_color_options|
+    color_options = doc.css('.number-of-colors').text.split("\n").map(&:strip).select do |number_of_color_options|
       number_of_color_options.length > 0
     end
 
-    number-of-colors
+    n
 
     price = doc.css('.prices').text.split("\n").map(&:strip).select do |shoe_price|
       shoe_price.length > 0
