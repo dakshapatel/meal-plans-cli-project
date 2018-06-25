@@ -1,6 +1,6 @@
 require "pry"
 class NikeShoes::Shoes
-  attr_accessor :name,
+  attr_accessor :name, :price, :color_options
 
   def self.all
 
@@ -10,13 +10,11 @@ class NikeShoes::Shoes
 
     doc = Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
 
-
-
     color_options = doc.css('.number-of-colors').text.split("\n").map(&:strip).select do |number_of_color_options|
       number_of_color_options.length > 0
     end
 
-    n
+
 
     price = doc.css('.prices').text.split("\n").map(&:strip).select do |shoe_price|
       shoe_price.length > 0
@@ -26,7 +24,9 @@ class NikeShoes::Shoes
     name = doc.css('.product-name').text.split("\n").map(&:strip).select do |shoe_name|
      shoe_name.length > 0
     end
-  binding.pry
+  
+
+  [color_options, price, name]
   end
 
 

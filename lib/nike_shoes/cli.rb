@@ -2,6 +2,8 @@
 require 'pry'
 class NikeShoes::CLI
 
+  attr_accessor
+
   def call
     puts "hey its working"
     list_price
@@ -26,7 +28,7 @@ end
     input = gets.strip
     case input
     when "1"
-      NikeShoes::Shoes.scrape_shoes.price < 100
+      NikeShoes::Shoes.scrape_shoes 
       puts "lists shoes in the 50-100 price range"
       binding.pry
     when "2"
@@ -38,7 +40,7 @@ end
     else
       puts "return to the main menu"
     end
-  
+
 
 end
 
