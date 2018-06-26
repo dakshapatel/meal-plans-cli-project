@@ -1,25 +1,23 @@
 require "pry"
-class NikeShoes::Shoes
-  attr_accessor :parse_page
 
+class NikeShoes::Scraper
 
-  def initialize
-    doc = Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
-    @parse_page ||= Nokogiri::HTML(doc)
-
-
+  def get_page
+    Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
   end
 
-  def get_names
-    item_container.css('.grid-item-info').css('.product-name').css('p').children.map {|name| name.text}.compact
+  def scrape_shoe_index
+    get_page.css('.grid-item-info').css('.product-name').css('p').children.map {|name| name.text}.compact
+
+    get_page.css('.grid-item-info').css('.product-price').css(span.local).children.map {|price| price.text}.compact
   end
 
-  def get_prices
-    item_container.css('.grid-item-info').css('.product-price').css(span.local).children.map {|price| price.text}.compact
-  end
+  def make_shoes
+    scrape_shoes_index.each do |r|
+      NikeShoes::Shoes.new_from_index_page(r)
+    end
 
-  def item_container
-    parse_page.css('.grid-item-info')
+
   end
 
   scraper = Scraper.new
