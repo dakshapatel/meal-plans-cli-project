@@ -4,10 +4,10 @@ class NikeShoes::Shoes
 
   @@all = []
 
-  def self.new_from_index_page(r)
-    sel.new()
-
-  end
+  # def self.new_from_index_page(r)
+  #   sel.new()
+  #
+  # end
 
   def initialize (price = nil, shoe_description = nil)
     @price = price
