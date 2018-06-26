@@ -2,34 +2,43 @@ require "pry"
 
 class NikeShoes::Scraper
 
-  def get_page
-    Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
-  end
 
   def scrape_shoe_index
-    get_page.css('.grid-item-info').css('.product-name').css('p').children.map {|name| name.text}.compact
 
-    get_page.css('.grid-item-info').css('.product-price').css(span.local).children.map {|price| price.text}.compact
-  end
+    doc = Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
+    shoes = []
 
-  def make_shoes
-    scrape_shoes_index.each do |r|
-      NikeShoes::Shoes.new_from_index_page(r)
-    end
+      doc.css('.grid-item-content').each do |card|
+        card.css('.grid-item-info').each do |shoe|
+          description = doc.css('.product-name').text.split("\n").map(&:strip) #.select do |shoe_name|
+                  #shoe_name.length > 0
+          #end
+          price = doc.css('.prices').text.split("\n").map(&:strip) #.select do |shoe_price|
+            #shoe_price.length > 0
+          end
+        end
+        shoes
 
 
-  end
+  # def make_shoes
+  #   scrape_shoes_index.each do |r|
+  #     NikeShoes::Shoes.new_from_index_page(r)
+  #   end
 
-  scraper = Scraper.new
-  names = scraper.get_names
-  prices = scraper.get_prices
-
-  (0...prices.size).each do |index|
-    puts "- - - index: #{index + 1} - - - "
-    puts "Name: #{names[index]} | price: #{prices[index]}"
 
   end
 end
+
+  # scraper = Scraper.new
+  # names = scraper.get_names
+  # prices = scraper.get_prices
+  #
+  # (0...prices.size).each do |index|
+  #   puts "- - - index: #{index + 1} - - - "
+  #   puts "Name: #{names[index]} | price: #{prices[index]}"
+  #
+  # end
+
 
 
 #   def self.scrape_shoes_price

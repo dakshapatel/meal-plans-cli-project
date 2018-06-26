@@ -1,27 +1,37 @@
 class NikeShoes::Shoes
 
-  attr_accessor :price, :shoe_description
-
-  @@all = []
+  attr_accessor :price, :description
 
   # def self.new_from_index_page(r)
   #   sel.new()
   #
   # end
 
-  def initialize (price = nil, shoe_description = nil)
+  def initialize (price = nil, description = nil)
     @price = price
-    @shoe_description = shoe_description
-    @@all << self
+    @description = description
   end
 
+  def get_prices(price)
+    Scraper.scrape_shoe_index.price.select do |shoe_price|
+      shoe_price.length > 0
+    end
+  end
+
+
+  def get_names(description)
+    Scraper.scrape_shoe_index.description.select do |shoe_name|
+      shoe_name.length > 0
+    end
+  end
 
   def self.all
     @@all
   end
 
-  def doc
-     @doc ||= Nokogiri::HTML(open(self.url))
-  end
-
 end
+# def self.create(price)
+#   new_shoe = new(price)
+#
+#
+# end
