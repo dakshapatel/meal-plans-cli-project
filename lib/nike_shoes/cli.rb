@@ -11,7 +11,7 @@ class NikeShoes::CLI
     NikeShoes::Shoes.scrape_shoes
 
   end
-end
+
 
   def list_price
     puts <<~DOC
@@ -28,9 +28,10 @@ end
     input = gets.strip
     case input
     when "1"
-      NikeShoes::Shoes.scrape_shoes 
+      NikeShoes::Shoes.scrape_shoes_price
       puts "lists shoes in the 50-100 price range"
-      binding.pry
+      #binding.pry
+
     when "2"
       puts "lists shoes in the 100-150 price range"
     when "3"
@@ -40,8 +41,8 @@ end
     else
       puts "return to the main menu"
     end
+end
 
 
 end
-
 end
