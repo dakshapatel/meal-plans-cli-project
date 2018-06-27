@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Daksha Patel"]
   spec.email         = ["dakshapatel100@gmail.com"]
 
-  spec.summary       = %q{CLI will display meal plans of Green Chef based on users diet options.}
-  spec.description   = %q{Scrapes data from the Green Chef website: https://greenchef.com/home to provide a CLI for viewing details for meals options of the week based on the users diet. Additional information such as cook time, allergens, and calories will be displayed.}
-  spec.homepage      = "https://github.com/dakshapatel/meal-plans-cli-project."
+  spec.summary       = %q{CLI will display shoes from Nike Shoes website based on users price.}
+  spec.description   = %q{Data is scraped from Nike Shoes website: https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120 to provide a CLI for viewing prices and shoe descriptions of shoes.}
+  spec.homepage      = "https://github.com/dakshapatel/nike-shoes-cli-project."
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -36,8 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "gem-release"
-  #spec.add_dependency "capybara/poltergeist"
-  #spec.add_dependency "capybara"
+  spec.add_development_dependency "rspec"
   spec.add_dependency "nokogiri"
 
 
