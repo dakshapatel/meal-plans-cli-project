@@ -2,27 +2,24 @@
 require 'pry'
 class NikeShoes::CLI
 
-  attr_accessor
 
   def call
-    puts "Welcome to Nike Shoes!"
-    puts "What is your price range?"
 
+    list_gender
+    start
     NikeShoes::Shoes.scrape_shoes
 
-    # list_price
-    # start
   end
 
-  def list_price
+  def list_gender
+    puts "Welcome to Nike Shoes!"
+    puts "What is your gender?"
     puts <<~DOC
-    1. 50 - 100
-    2. 100- 150
-    3. 150 -200
+    1. Men's
+    2. Women's
+    3. Big Kids'
+    4. Little Kids'
     DOC
-    (0...prices.size).each do |index|
-      puts "- index:#{index +1} -"
-      puts "Name: #{names[index]} | price: #{prices[index]}"
   end
 end
 
@@ -30,29 +27,29 @@ end
 
     input = "nil"
     while input != "exit"
-      puts "Enter the number to see shoes in your price range or type exit"
+      puts "Enter the number to see shoes in your gender or type exit"
       input = gets.strip
 
-      # if input.to_i > 0
-      #   the_shoe = @shoes[input.to_i -1]
-      #   puts "#{the_shoe.price}"
-      # elsif input.to_i > 100
-      #   the_shoe
       case input
         when "1"
-          puts "lists shoes in 50-100 price range"
+          NikeShoes::Shoes.get_names.select { |name| name.include?("Men's")}
+          puts "List of Men's shoes."
         when "2"
-          puts "lists shoes in the 100-150 price range"
+          NikeShoes::Shoes.get_names.select { |name| name.include?("Women's")}
+          puts "List of Women's shoes."
         when "3"
-          puts "lists shoes in the 150-200 price range"
+          NikeShoes::Shoes.get_names.select { |name| name.include?("Big Kids'")}
+          "List of Big Kids' shoes."
+        when "4"
+          NikeShoes::Shoes.get_names.select { |name| name.include?("Little Kids'")}
+          "List of Little Kids' shoes."
         when "back"
-          list_price
+          list_gender
         when "exit"
           puts "Good-Bye!"
         else
           puts "Please pick from the following:"
-          list_price
+          list_gender
         end
     end
   end
-end

@@ -3,10 +3,10 @@ class NikeShoes::Shoes
   attr_accessor :price, :name
 
 
-  def initialize(price, name)
-    @price = price
-    @name = name
-  end
+  # def initialize(price, name)
+  #   @price = price
+  #   @name = name
+  # end
 
 
     def self.scrape_shoes
@@ -27,5 +27,6 @@ class NikeShoes::Shoes
       doc = Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
       shoe.price = doc.css(".grid-item-info").css('.product-price').css("span.local").children.map { |price| price.text }.compact
     end
+
 
 end
