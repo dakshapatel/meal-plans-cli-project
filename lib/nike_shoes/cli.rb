@@ -7,8 +7,11 @@ class NikeShoes::CLI
   def call
     puts "Welcome to Nike Shoes!"
     puts "What is your price range?"
-    list_price
-    start
+
+    NikeShoes::Shoes.scrape_shoes
+
+    # list_price
+    # start
   end
 
   def list_price
@@ -17,18 +20,24 @@ class NikeShoes::CLI
     2. 100- 150
     3. 150 -200
     DOC
-    @shoes = NikeShoes::Shoes.shoe
-    @shoes.each.with_index(1) do |price, i|
-       puts "#{i}. #{shoe.price}"
+    (0...prices.size).each do |index|
+      puts "- index:#{index +1} -"
+      puts "Name: #{names[index]} | price: #{prices[index]}"
   end
 end
 
   def start
 
-    input = nil
+    input = "nil"
     while input != "exit"
-
+      puts "Enter the number to see shoes in your price range or type exit"
       input = gets.strip
+
+      # if input.to_i > 0
+      #   the_shoe = @shoes[input.to_i -1]
+      #   puts "#{the_shoe.price}"
+      # elsif input.to_i > 100
+      #   the_shoe
       case input
         when "1"
           puts "lists shoes in 50-100 price range"
@@ -46,8 +55,4 @@ end
         end
     end
   end
-
-
-
-
 end

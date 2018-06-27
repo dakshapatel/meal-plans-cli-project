@@ -10,7 +10,8 @@ class NikeShoes::Scraper
 
       doc.css('.grid-item-content').each do |card|
         card.css('.grid-item-info').each do |shoe|
-          description = doc.css('.product-name').text.split("\n").map(&:strip) #.select do |shoe_name|
+          description = doc.css('.product-name').text
+           #.select do |shoe_name|
                   #shoe_name.length > 0
           #end
           price = doc.css('.prices').text.split("\n").map(&:strip) #.select do |shoe_price|
