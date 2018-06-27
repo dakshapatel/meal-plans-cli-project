@@ -17,15 +17,15 @@ class NikeShoes::CLI
     2. 100- 150
     3. 150 -200
     DOC
-     NikeShoes::Shoes.shoe
-    # @shoes = NikeShoes::Shoes.shoe
-    # @shoes.each.with_index(1) do |price, i|
-    #   puts "#{i}. #{shoe.price}"
+    @shoes = NikeShoes::Shoes.shoe
+    @shoes.each.with_index(1) do |price, i|
+       puts "#{i}. #{shoe.price}"
   end
+end
 
   def start
 
-    input = ""
+    input = nil
     while input != "exit"
 
       input = gets.strip
