@@ -1,0 +1,25 @@
+
+[1mFrom:[0m /home/dakshapatel/temporary/nike-shoes-cli-project/lib/nike_shoes/shoes.rb @ line 40 NikeShoes::Shoes.get_shoe_info:
+
+    [1;34m24[0m: [32mdef[0m [1;36mself[0m.[1;34mget_shoe_info[0m
+    [1;34m25[0m:   doc = [1;34;4mNokogiri[0m::HTML(open([31m[1;31m'[0m[31mhttps://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120[1;31m'[0m[31m[0m))
+    [1;34m26[0m: 
+    [1;34m27[0m:   [1;34m# doc.css('.product-name').text.split("\n").map(&:strip).select do |shoe_name|[0m
+    [1;34m28[0m:   [1;34m#      shoe_name.length > 0[0m
+    [1;34m29[0m: 
+    [1;34m30[0m: 
+    [1;34m31[0m:   doc.css([31m[1;31m"[0m[31m.grid-item-info[1;31m"[0m[31m[0m).each [32mdo[0m |sneaker|
+    [1;34m32[0m:     shoe = [1;36mself[0m.new
+    [1;34m33[0m:     shoe.name = sneaker.css([31m[1;31m"[0m[31m.product-name[1;31m"[0m[31m[0m).text.split([31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m).map(&[33m:strip[0m)[[1;34m1[0m]
+    [1;34m34[0m:     shoe.save
+    [1;34m35[0m: 
+    [1;34m36[0m:   [32mend[0m
+    [1;34m37[0m: 
+    [1;34m38[0m: 
+    [1;34m39[0m: 
+ => [1;34m40[0m:   binding.pry
+    [1;34m41[0m:   shoe.price = doc.css([31m[1;31m"[0m[31m.grid-item-info[1;31m"[0m[31m[0m).css([31m[1;31m'[0m[31m.product-price[1;31m'[0m[31m[0m).css([31m[1;31m"[0m[31mspan.local[1;31m"[0m[31m[0m).children.map { |price| price.text }.compact
+    [1;34m42[0m: 
+    [1;34m43[0m:   shoe
+    [1;34m44[0m: [32mend[0m
+
