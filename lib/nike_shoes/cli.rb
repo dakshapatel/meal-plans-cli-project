@@ -19,11 +19,10 @@ class NikeShoes::CLI
 
     DOC
     NikeShoes::Shoes.get_shoe_info
-    NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
-      puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
-    end
-    dakota = binding
-    dakota.pry 
+    # NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
+    #   puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
+    #end
+
   end
 
   def start
@@ -38,15 +37,15 @@ class NikeShoes::CLI
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "2"
-          NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
+          NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "3"
-          NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
+          NikeShoes::Shoes.gender("Big Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "4"
-          NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
+          NikeShoes::Shoes.gender("Little Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "back"
