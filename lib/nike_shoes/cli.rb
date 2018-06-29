@@ -18,6 +18,8 @@ class NikeShoes::CLI
     4. Little Kids'
 
     DOC
+
+    puts "Enter the number associated with the gender or type exit"
     NikeShoes::Shoes.get_shoe_info
     # NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
     #   puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
@@ -28,23 +30,26 @@ class NikeShoes::CLI
   def start
     input = "nil"
     while input != "exit"
-      puts "Enter the number associated with the gender or type exit"
       input = gets.strip
 
       case input
         when "1"
+          puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "2"
+          puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "3"
+          puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Big Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
         when "4"
+          puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Little Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
