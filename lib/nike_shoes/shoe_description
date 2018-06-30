@@ -1,0 +1,22 @@
+class NikeShoes::ShoeDescription
+
+  
+      def self.shoe_description
+
+        doc = Nokogiri::HTML(open('https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120'))
+
+        doc.css('div.grid-item-image-wrapper a').map {|link| link ['href']}
+
+
+
+        #user can click on a url to show the description of the shoe they want
+        binding.pry
+      end 
+
+      
+      end
+
+
+
+
+end

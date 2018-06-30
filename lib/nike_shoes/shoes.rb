@@ -42,15 +42,11 @@ class NikeShoes::Shoes
 
           self.create_from_hash(shoe_hash)
         end
+        binding.pry
 
       end
 
 
-    def deeper_method
-
-      #user can click on a url to show the description of the shoe they want
-
-    end
 
 
 end

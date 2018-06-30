@@ -20,6 +20,7 @@ class NikeShoes::CLI
     DOC
 
     puts "Enter the number associated with the gender or type exit"
+    NikeShoes::ShoeDescription.deeper_method
     NikeShoes::Shoes.get_shoe_info
     # NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
     #   puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
