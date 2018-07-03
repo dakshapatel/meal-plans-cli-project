@@ -34,12 +34,12 @@ class NikeShoes::CLI
 
       case input
         when "1"
-          puts "Enter the number of the shoe you would like more information on?"
+          puts "Click on the link of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
-            puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
+            puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}- #{shoe.url}."
           end
-          NikeShoes::Shoes.description.each.with.index(+ 1) do |number, i|
-            puts
+          # NikeShoes::Shoes.description.each.with.index(+ 1) do |number, i|
+          #   puts
         when "2"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|

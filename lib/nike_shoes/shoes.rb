@@ -16,14 +16,12 @@ class NikeShoes::Shoes
     end
 
 
-    def self.description(link)
-      self.all select do |i|
-        shoe.link.include?(link)
-      end
-    end 
+    # def self.description(link)
+    #   self.all select do |number|
+    #     shoe.link.include?(link)
+    #   end
+    # end 
 
-
-    end
 
 
     def self.create_from_hash(shoe_hash)
