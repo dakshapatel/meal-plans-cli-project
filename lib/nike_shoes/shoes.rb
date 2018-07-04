@@ -1,7 +1,7 @@
 require 'pry'
 class NikeShoes::Shoes
 
-  attr_accessor :name, :gender, :price, :url
+  attr_accessor :name, :gender, :price, :url, :colors
 
     @@all = []
 
@@ -19,18 +19,19 @@ class NikeShoes::Shoes
       input = gets.strip
       index = input.to_i - 1
       shoe = NikeShoes::Shoes.gender(gender)[index]
-      shoe.price = shoe_hash[:price]
-      shoe.url = shoe_hash [:url]
-      puts "Price: #{shoe.price} "
-      puts "URL: #{shoe.url} "
+      puts "Name: #{shoe.name}"
+      puts "Price: #{shoe.price}"
+      puts "Colors: #{shoe.colors}"
+      puts "Url: #{shoe.url}"
     end
 
     def self.create_from_hash(shoe_hash)
       shoe = self.new
       shoe.name = shoe_hash[:name]
       shoe.gender = shoe_hash[:gender]
-      # shoe.price = shoe_hash[:price]
-      # shoe.url = shoe_hash [:url]
+      shoe.price = shoe_hash[:price]
+      shoe.colors = shoe_hash[:colors]
+      shoe.url = shoe_hash [:url]
       shoe.save unless shoe.name == " "
     end
 
@@ -46,10 +47,11 @@ class NikeShoes::Shoes
         shoe_hash = { name:          sneaker.css('.product-display-name').text.split("\n").map(&:strip).join,
           gender: sneaker.css('.product-subtitle').text.split("\n").map(&:strip).join,
           price: sneaker.css('.product-price').text.split("\n").map(&:strip).join,
+          colors: sneaker.css('.number-of-colors').text.split("\n").map(&:strip).join,
           url: sneaker.css('div.grid-item-image-wrapper a').map {|link| link ['href']}
           }
           self.create_from_hash(shoe_hash)
-          #binding.pry
+
         end
       end
 end

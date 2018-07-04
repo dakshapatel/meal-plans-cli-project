@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Daksha Patel"]
   spec.email         = ["dakshapatel100@gmail.com"]
 
-  spec.summary       = %q{CLI will display shoes from Nike Shoes website based on users price.}
-  spec.description   = %q{Data is scraped from Nike Shoes website: https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120 to provide a CLI for viewing prices and shoe descriptions of shoes.}
+  spec.summary       = %q{CLI will display shoes from Nike Shoes website based on users choice.}
+  spec.description   = %q{Data is scraped from Nike Shoes website: https://store.nike.com/us/en_us/pw/shoes/oi3?ipp=120 to provide a CLI for viewing details of shoes given the users input.}
   spec.homepage      = "https://github.com/dakshapatel/nike-shoes-cli-project."
   spec.license       = "MIT"
 
