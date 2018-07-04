@@ -41,16 +41,19 @@ class NikeShoes::CLI
           NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
+          NikeShoes::Shoes.display_shoe("Women's")
         when "3"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Big Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
+          NikeShoes::Shoes.display_shoe("Big Kids'")
         when "4"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Little Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}."
           end
+          NikeShoes::Shoes.display_shoe("Little Kids'")
         when "back"
           list_gender
         when "exit"

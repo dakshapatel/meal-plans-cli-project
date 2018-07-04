@@ -19,6 +19,8 @@ class NikeShoes::Shoes
       input = gets.strip
       index = input.to_i - 1
       shoe = NikeShoes::Shoes.gender(gender)[index]
+      shoe.price = shoe_hash[:price]
+      shoe.url = shoe_hash [:url]
       puts "Price: #{shoe.price} "
       puts "URL: #{shoe.url} "
     end
@@ -27,9 +29,9 @@ class NikeShoes::Shoes
       shoe = self.new
       shoe.name = shoe_hash[:name]
       shoe.gender = shoe_hash[:gender]
-      shoe.price = shoe_hash[:price]
-      shoe.url = shoe_hash [:url]
-      shoe.save unless shoe.name.empty
+      # shoe.price = shoe_hash[:price]
+      # shoe.url = shoe_hash [:url]
+      shoe.save unless shoe.name == " "
     end
 
     def save
