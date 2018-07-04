@@ -5,6 +5,7 @@ class NikeShoes::CLI
 
   def call
     list_gender
+    NikeShoes::Shoes.get_shoe_info
     start
   end
 
@@ -20,11 +21,6 @@ class NikeShoes::CLI
     DOC
 
     puts "Enter the number associated with the gender or type exit"
-
-    NikeShoes::Shoes.get_shoe_info
-    NikeShoes::Link.shoe_description
-
-
   end
 
   def start
@@ -34,12 +30,12 @@ class NikeShoes::CLI
 
       case input
         when "1"
-          puts "Click on the link of the shoe you would like more information on?"
+          puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name} - #{shoe.price}- #{shoe.gender}- #{shoe.url}."
           end
-          # NikeShoes::Shoes.description.each.with.index(+ 1) do |number, i|
-          #   puts
+          NikeShoes::Shoes.display_shoe("Men's")
+
         when "2"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|

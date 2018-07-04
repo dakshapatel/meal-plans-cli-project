@@ -16,20 +16,24 @@ class NikeShoes::Shoes
     end
 
 
-    # def self.description(link)
-    #   self.all select do |number|
-    #     shoe.link.include?(link)
-    #   end
-    # end 
+    def self.display_shoe(gender)
+      input = gets.strip
+      index = input.to_i - 1
+      shoe = NikeShoes::Shoes.gender(gender)[index]
+      puts "Name: " + shoe.name
+      puts "Price: " + shoe.price
+    end
+
+
 
 
 
     def self.create_from_hash(shoe_hash)
       shoe = self.new
       shoe.name = shoe_hash[:name]
-      shoe.gender = shoe_hash[:gender]
-      shoe.price = shoe_hash[:price]
-      shoe.url = shoe_hash [:url]
+      # shoe.gender = shoe_hash[:gender]
+      # shoe.price = shoe_hash[:price]
+      # shoe.url = shoe_hash [:url]
       shoe.save unless shoe.name.empty?
       #binding.pry
     end
