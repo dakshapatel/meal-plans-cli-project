@@ -5,8 +5,9 @@ class NikeShoes::CLI
 
   def call
     menu
-    NikeShoes::Shoes.get_shoe_info
+    NikeShoes::Scraper.get_shoe_info
     start
+
   end
 
   def menu
@@ -17,10 +18,20 @@ class NikeShoes::CLI
     2. Women's
     3. Big Kids'
     4. Little Kids'
-
     DOC
 
     puts "Enter your choice or type exit."
+  end
+
+
+  def display_shoe(gender)
+    input = gets.strip
+    index = input.to_i - 1
+    shoe = NikeShoes::Shoes.gender(gender)[index]
+    puts "Name: #{shoe.name}"
+    puts "Price: #{shoe.price}"
+    puts "Colors: #{shoe.colors}"
+    puts "Url: #{shoe.url}"
   end
 
   def start
@@ -34,28 +45,31 @@ class NikeShoes::CLI
           NikeShoes::Shoes.gender("Men's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name}"
           end
-          NikeShoes::Shoes.display_shoe("Men's")
+          display_shoe("Men's")
+
 
         when "2"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Women's").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name}"
           end
-          NikeShoes::Shoes.display_shoe("Women's")
+          display_shoe("Women's")
+
+
 
         when "3"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Big Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name}"
           end
-          NikeShoes::Shoes.display_shoe("Big Kids'")
+          display_shoe("Big Kids'")
 
         when "4"
           puts "Enter the number of the shoe you would like more information on?"
           NikeShoes::Shoes.gender("Little Kids'").each.with_index(1) do |shoe, i|
             puts "#{i}. #{shoe.name}"
           end
-          NikeShoes::Shoes.display_shoe("Little Kids'")
+          display_shoe("Little Kids'")
 
         when "back"
           menu
@@ -65,6 +79,8 @@ class NikeShoes::CLI
           puts "Please pick from the following:"
           menu
         end
+
+
     end
   end
 end
